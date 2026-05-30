@@ -1,0 +1,52 @@
+name: Build & Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Get version from tag
+        id: version
+        run: echo "VERSION=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+
+      - name: Build plugin ZIP
+        run: |
+          mkdir -p build/llms-txt-generator
+          rsync -av --exclude='.git' \
+                    --exclude='.github' \
+                    --exclude='build' \
+                    --exclude='*.zip' \
+                    --exclude='.gitignore' \
+                    --exclude='README.md' \
+                    . build/llms-txt-generator/
+          cd build
+          zip -r "../llms-txt-generator-${{ steps.version.outputs.VERSION }}.zip" llms-txt-generator/
+          cd ..
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "LLMs.txt Generator v${{ steps.version.outputs.VERSION }}"
+          body: |
+            ## LLMs.txt Generator v${{ steps.version.outputs.VERSION }}
+
+            WordPress plugin that generates `/llms.txt` and `/llms-full.txt` for your site so AI models can understand your content.
+
+            ### Installation
+            1. Download `llms-txt-generator-${{ steps.version.outputs.VERSION }}.zip` below
+            2. WordPress Admin → Plugins → Add New → Upload Plugin
+            3. Upload the ZIP file and activate
+          files: "llms-txt-generator-${{ steps.version.outputs.VERSION }}.zip"
+          draft: false
+          prerelease: false

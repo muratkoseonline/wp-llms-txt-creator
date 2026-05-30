@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       LLMs.txt Generator
- * Plugin URI:        https://github.com/muratkoseonline/tiktokmachine
+ * Plugin URI:        https://github.com/muratkoseonline/wp-llms-txt-creator
  * Description:       Generates and serves /llms.txt and /llms-full.txt for your site so AI models (ChatGPT, Claude, Gemini, Perplexity…) can understand your content with less effort. Respects Yoast / Rank Math noindex, caches output, and can log AI bot visits.
  * Version:           1.0.0
  * Requires at least: 5.5

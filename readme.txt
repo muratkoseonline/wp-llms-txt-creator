@@ -1,5 +1,5 @@
 === LLMs.txt Generator ===
-Contributors: muratkoseonline
+Contributors: muratkoseonline, claudeai
 Tags: llms.txt, ai, seo, llm, gpt
 Requires at least: 5.5
 Tested up to: 6.7
