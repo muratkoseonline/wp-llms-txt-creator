@@ -4,7 +4,7 @@ Tags: llms.txt, ai, seo, llm, gpt
 Requires at least: 5.5
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -57,6 +57,9 @@ consuming it yet. The file is low-cost to provide and improves how compliant
 tools and a growing number of agents read your site.
 
 == Changelog ==
+
+= 1.0.3 =
+* Added the `Update URI` plugin header so WordPress no longer confuses this plugin with the unrelated "LLMs.txt Generator" listed on WordPress.org. This stops WordPress from offering a false update that would replace this plugin with a different one.
 
 = 1.0.0 =
 * Initial release.
