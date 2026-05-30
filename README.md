@@ -94,6 +94,11 @@ add_filter( 'llms_txt_output', function ( $body ) {
 } );
 ```
 
+## Contributors
+
+- [muratkoseonline](https://github.com/muratkoseonline)
+- [Claude (Anthropic)](https://claude.ai) — AI pair programmer
+
 ## License
 
 GPL-2.0-or-later. See [LICENSE](LICENSE).
