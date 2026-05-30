@@ -1,0 +1,17 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+
+# PHP tooling
+/vendor/
+composer.lock
+.phpunit.result.cache
+
+# Build artifacts
+/build/
+/dist/
+*.zip
